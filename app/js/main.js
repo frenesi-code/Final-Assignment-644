@@ -845,6 +845,7 @@ $(document).ready(function() {
     });
 
     // Handling step clicks
+    /*
     $('ul > li > a').on('click', function (event) {     
       
       $('#your-info-container').hide();
@@ -875,5 +876,5 @@ $(document).ready(function() {
             $('#fourth-step-li').addClass('active');
         }
     })
-   
+   */
 });

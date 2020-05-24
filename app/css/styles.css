@@ -1,5 +1,5 @@
 .container {
-    max-width: 80%;
+    max-width: 85%;
     padding-top: 10px;
 }
 
@@ -92,6 +92,10 @@ ul.stepper li.completed a .label {
     transition: .5s
 }
 
+.stepper-horizontal li a {
+    cursor: default;
+}
+
 .stepper-horizontal li a .label {
     margin-top: .63rem
 }
@@ -118,9 +122,7 @@ ul.stepper li.completed a .label {
     background-color: rgba(0, 0, 0, 0.1)
 }
 
-.stepper-horizontal li:hover {
-    background-color: rgba(0, 0, 0, 0.06)
-}
+
 
 @media (max-width: 47.9375rem) {
     .stepper-horizontal {
