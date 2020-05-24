@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ristorante Mamamia Pizzeria">
+    <meta name="author" content="Paulo Rego">
+
+    <title>Mamamia Pizzeria</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="">
+    <div class="container">
+        <!-- Image and text -->
+
+        <nav class="navbar navbar-expand-lg navbar-inverse navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">
+                    <img src="img/pizzaria-logo.png" width="30" height="26" class="d-inline-block align-center" alt="">
+                </a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <span class="nav-link">Orders <span class="sr-only">(current)</span></span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" id="nav-item-aboutus" href="#" onclick="return false;">About Us</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" id="nav-item-contactus" href="" onclick="return false;">Contact Us</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <div class="jumbotron card card-image bg-light" style="display: none;">
+            <div class="text-black text-center px-5">
+                <div>
+                    <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>MAMAMIA PIZZERIA</strong></h2>
+                    <p class="mx-5 mb-5">An authentic but unique Milano gourmet pizza is the beginning of the Ambrogio15 story. A special dough recipe, an innovative pizza-making process, high-quality
+                        Italian ingredients, a holistic approach to the food and beverage world, a focus on sustainable agriculture and farming, along with a deep love for Milano, where Andrea,
+                        Giacomo, and Luca grew up, and for San Diego, where they studied, worked and became who they are now.
+                    </p>
+                    <a class="btn btn-outline-white btn-lg"><i class="fas fa-clone left"></i> Make your order below!</a>
+                </div>
+            </div>
+        </div>
+        <!-- Horizontal Steppers -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Stepers Wrapper -->
+                <ul class="stepper stepper-horizontal">
+
+                    <!-- First Step -->
+                    <li class="" id="first-step-li">
+                        <a id="first-step" href="#">
+                            <span class="circle">1</span>
+                            <span class="label">Your Info</span>
+                        </a>
+                    </li>
+
+                    <!-- Second Step -->
+                    <li class="" id="second-step-li">
+                        <a id="second-step" href="#">
+                            <span class="circle">2</span>
+                            <span class="label">Your Order</span>
+                        </a>
+                    </li>
+
+                    <!-- Third Step -->
+                    <li class="" id="third-step-li">
+                        <a id="third-step" href="#">
+                            <span class="circle">3</span>
+                            <span class="label">Billing Info</span>
+                        </a>
+                    </li>
+
+                    <!-- Fourth Step -->
+                    <li class="" id="fourth-step-li">
+                        <a id="fourth-step" href="#">
+                            <span class="circle">4</span>
+                            <span class="label">Payment Method</span>
+                        </a>
+                    </li>
+
+                </ul>
+                <!-- /.Stepers Wrapper -->
+
+            </div>
+        </div>
+        <!-- /.Horizontal Steppers -->
+
+        <!--  TOAST -->
+
+        <!-- CART SECTION -->
+        <div class="row">
+            <div id="your-cart-container" class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge badge-secondary badge-pill" id="badge">0</span>
+                </h4>
+                <ul class="list-group mb-3" id="myList">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0" id="product-name">Empty cart</h6>
+                            <small class="text-muted" id="product-description">There is no producs in your cart</small><br />
+                            <small class="text-muted" id="cheese-option"></small><br />
+                            <small class="text-muted" id="sause-option"></small><br />
+                            <small class="text-muted" id="topping-option"></small><br />
+                        </div>
+                        <span class="text-muted" id="product-price">$0</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (USD)</span>
+                        <strong id="total">$0</strong>
+                    </li>
+                </ul>
+
+                <form class="card p-2" id="redeem-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="promo-code" placeholder="Promo code">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary" id="bt-redeem">Redeem</button>
+                        </div>
+                    </div>
+                    <small class="text-muted custom">Use the <b>SDCCD</b> promo code to get <b>$5</b> off</small>
+                </form>
+                
+            </div>
+
+            <!-- YOUR INFO SECTION STARTS -->
+            <div id="your-info-container" class="col-md-8 order-md-1">
+                <h4 class="mb-3">Your Info</h4>
+                <hr class="mb-4">
+                <form id="your-info-form" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="name">Full name</label>
+                            <input type="text" class="form-control" id="name" placeholder="John Doe" value="">
+                            <div class="invalid-feedback">
+                                Please enter a valid name.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email">Email </label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="phone">Phone</label>
+                            <input class="form-control" type="phone" placeholder="(555)-555-5555" id="phone">
+                            <div class="invalid-feedback">
+                                Please enter a valid phone number.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="country">Address Type</label>
+                        <select class="custom-select d-block w-100" id="address-type">
+                            <option value="Choose">Choose...</option>
+                            <option value="House">House</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Business">Business</option>
+                            <option value="Campus">Campus</option>
+                            <option value="">Hotel</option>
+                            <option value="Hotel">Dorm</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid address type.
+                        </div>
+                    </div>
+
+                    <div class="mb-3 div-display" id="address-type-text">
+                        <label for="input-ddress-type">Other</label>
+                        <input type="text" class="form-control" id="input-address-type" placeholder="">
+                        <div class="invalid-feedback">
+                            Please select a valid address type.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+                        <div class="invalid-feedback">
+                            Please enter a valid address.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" placeholder="San Diego">
+                            <div class="invalid-feedback">
+                                Please enter a valid city name.
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label for="zip">Zip</label>
+                            <input type="text" class="form-control" id="zip" placeholder="92111" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="5">
+                            <div class="invalid-feedback">
+                                Please enter a valid Zip code.
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" id="state" placeholder="CA">
+                            <div class="invalid-feedback">
+                                Please enter a valid state code.
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn float-right" id="next-btn-your-info" type="button">Next</button>
+                </form>
+            </div>
+            <!-- YOUR INFO SECTION ENDS -->
+
+            <!-- YOUR ORDER SECTION STARTS -->
+            <div id="your-order-container" class="col-md-8 order-md-1">
+                <h4 class="mb-3">Your Order</h4>
+                <hr class="mb-4">
+
+                <form id="your-order-form" class="needs-validation" novalidate>
+
+                    <label for="country">Dough Options</label>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="groupOfSizeCostRadios" id="hand-tossed-radio" value="hand-tossed">
+                                <label class="form-check-label" for="hand-tossed-radio">
+                                    Hand Tossed
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="groupOfSizeCostRadios" id="thin-crust-radio" value="thin-crust">
+                                <label class="form-check-label" for="thin-crust-radio">
+                                    Thin Crust
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="groupOfSizeCostRadios" id="new-york-radio" value="new-york">
+                                <label class="form-check-label" for="new-york-radio">
+                                    New York Style
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="groupOfSizeCostRadios" id="gluten-free-radio" value="gluten-free">
+                                <label class="form-check-label" for="gluten-free-radio">
+                                    Gluten Free
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invalid-feedback" id="invalid-dough">
+                        Please select a valid dough.
+                    </div>
+
+                    <div class="row" id="pizza-size-cost">
+                        <div class="col-md-12 mb-3">
+                            <label for="country">Size and Cost</label>
+                            <select class="custom-select d-block w-100" id="select-pizza-size-cost">
+                                <option value="Choose">Choose...</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid size.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="select-cheese-div">
+                        <div class="col-md-12 mb-3">
+                            <label for="country">Cheese Options</label>
+                            <select class="custom-select d-block w-100" id="select-cheese">
+                                <option value="Choose">Choose...</option>
+                                <option value="Normal: no charge">Normal: no charge</option>
+                                <option value="Light: no charge">Light: no charge</option>
+                                <option value="Extra: +$2.99">Extra: +$2.99</option>
+                                <option value="Double: +$3.99">Double: +$3.99</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid cheese.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="select-sause-div">
+                        <div class="col-md-12 mb-3">
+                            <label for="country">Sause Options</label>
+                            <select class="custom-select d-block w-100" id="select-sause" required>
+                                <option value="Choose">Choose...</option>
+                                <option value="Regular Tomato: no charge">Regular Tomato: no charge</option>
+                                <option value="Hearty Tomato: +$.99">Hearty Tomato: +$.99</option>
+                                <option value="BBQ Sauce: +$1.99">BBQ Sauce: +$1.99</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid sause.
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="row" id="topping-options-first-group">
+                        <label class="col-md-12 mb-3 for=" country">Toppings ($.99 extra each topping)</label>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Sausage" name="toppingsRadioGroup" id="topping-sausage">
+                            <label class="custom-control-label" for="topping-sausage">Sausage</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Ham" name="toppingsRadioGroup" id="topping-ham">
+                            <label class="custom-control-label" for="topping-ham">Ham</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Bacon" name="toppingsRadioGroup" id="topping-bacon">
+                            <label class="custom-control-label" for="topping-bacon">Bacon</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Salami" name="toppingsRadioGroup" id="topping-salami">
+                            <label class="custom-control-label" for="topping-salami">Salami</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Onion" name="toppingsRadioGroup" id="topping-onion">
+                            <label class="custom-control-label" for="topping-onion">Onion</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Olive" name="toppingsRadioGroup" id="topping-olives">
+                            <label class="custom-control-label" for="topping-olives">Olives</label>
+                        </div>
+
+                    </div>
+                    <div class="row" id="topping-options-second-group">
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Pepperoni" name="toppingsRadioGroup" id="topping-pepperoni">
+                            <label class="custom-control-label" for="topping-pepperoni">Pepperoni</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Jalapenos" name="toppingsRadioGroup" id="topping-jalapenos">
+                            <label class="custom-control-label" for="topping-jalapenos">Jalapenos</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Pineapple" name="toppingsRadioGroup" id="topping-pineapple">
+                            <label class="custom-control-label" for="topping-pineapple">Pineapple</label>
+                        </div>
+                        <div class="col-md-2 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Peppers" name="toppingsRadioGroup" id="topping-peppers">
+                            <label class="custom-control-label" for="topping-peppers">Peppers</label>
+                        </div>
+                        <div class="col-md-4 mb-3 custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" value="Mushrooms" name="toppingsRadioGroup" id="topping-mushrooms">
+                            <label class="custom-control-label" for="topping-mushrooms">Mushrooms</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 order-md-1">
+                            <button class="btn btn-primary btn float-right" id="add-to-cart-btn" type="button">Add to Cart</button>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn float-left" id="back-btn-your-order" type="button">Back</button>
+                    <button class="btn btn-primary btn float-right" id="next-btn-your-order" type="button">Next</button>
+                </form>
+            </div>
+            <!--    YOUR ORDER SECTION END   -->
+
+            <!-- BILLING INFO SECTION STARTS -->
+            <div id="billing-info-container" class="col-md-8 order-md-1">
+                <h4 class="mb-3">Billing Info</h4>
+                <hr class="mb-4">
+
+                <form id="billing-info-form" class="needs-validation" novalidate>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="same-address">
+                        <label class="custom-control-label" for="same-address">Same as delivery information</label>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="full-name-billing-info">Full name</label>
+                            <input type="text" class="form-control" id="full-name-billing-info" placeholder="John Doe">
+                            <div class="invalid-feedback">
+                                Valid full name is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="country">Address Type</label>
+                        <select class="custom-select d-block w-100" id="address-type-billing-info">
+                            <option value="Choose">Choose...</option>
+                            <option value="House">House</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Business">Business</option>
+                            <option value="Campus">Campus</option>
+                            <option value="">Hotel</option>
+                            <option value="Hotel">Dorm</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid address type.
+                        </div>
+                    </div>
+
+                    <div class="mb-3 div-display" id="div-address-type">
+                        <label for="input-ddress-type">Other</label>
+                        <input type="text" class="form-control" id="input-address-type" placeholder="">
+                        <div class="invalid-feedback">
+                            Please select a valid address type.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address-billing-info" placeholder="1234 Main St">
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                        <input type="text" class="form-control" id="address2-billing-info" placeholder="Apartment or suite">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city-billing-info" placeholder="San Diego">
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label for="zip">Zip</label>
+                            <input type="text" class="form-control" id="zip-billing-info" placeholder="92111" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="5">
+                            <div class="invalid-feedback">
+                                Zip code required.
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" id="state-billing-info" placeholder="CA" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <hr class="mb-4">
+
+                    <button class="btn btn-primary btn float-left" id="back-btn-billing-info" type="button">Back</button>
+                    <button class="btn btn-primary btn float-right" id="next-btn-billing-info" type="button">Next</button>
+                </form>
+            </div>
+            <!--  BILLING INFO SECTION ENDS  -->
+
+            <!--    PAYMENT SECTION STARTS   -->
+            <div id="payment-method-container" class="col-md-8 order-md-1">
+                <h4 class="mb-3">Payment Method</h4>
+                <hr class="mb-4">
+                <form id="payment-method-form" class="needs-validation" novalidate>
+                    <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                            <label class="custom-control-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="paypal">PayPal</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Name on card</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="Full name as displayed on card" required>
+                            <div class="invalid-feedback">
+                                Name on card is required
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">Credit card number</label>
+                            <input type="text" class="form-control" id="cc-number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="19" placeholder="1111 1111 1111 1111"
+                                required>                                
+                            <div class="invalid-feedback">
+                                Credit card number is required
+                            </div>
+                            <span id="cc-brand" style="font-size: 80%; color: dodgerblue;"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration">Expiration</label>
+                            <select class="custom-select d-block w-100" id="address-type">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration">&nbsp;</label>
+                            <select class="custom-select d-block w-100" id="address-type">
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid date type.
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration">CVV</label>
+                            <input type="text" class="form-control" id="cc-cvv" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="4" placeholder="123" required>
+                            <div class="invalid-feedback">
+                                Security code required
+                            </div>
+                        </div>                        
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn float-left" id="back-btn-payment-method" type="button">Back</button>
+                    <button class="btn btn-primary btn float-right" id="next-btn-payment-method" type="button">Make your order</button>
+                </form>
+            </div>
+            <!--     PAYMENT SECTION ENDS    -->
+
+            <!-- Modals -->
+            <div class="modal fade" id="wrong-code-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Invalid Code!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Please try another code.<br />
+                            Thank you!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="wrong-code-modal-ok" class="btn btn-primary">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="order-done-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Your oder's in!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            We'll email updates to your order.<br />
+                            Thank you!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="order-done-modal-ok" class="btn btn-primary">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="cart-empty-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Cart Empty!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Please, add at least one product in the cart.<br />
+                            Thank you!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="cart-empty-modal-ok" class="btn btn-primary">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER SECTION -->
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2020 Mamamia Pizzeria</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+
+        <script src="js/main.js"></script>
+</body>
+
+</html>
